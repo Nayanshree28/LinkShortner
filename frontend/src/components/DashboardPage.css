@@ -1,0 +1,1309 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope', sans-serif; 
+    color: #333;
+    height: 100%; /* Ensures full height for body and html */
+
+  }
+  
+  .dashboard-page {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevent page scrolling */    
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    padding:20px 20px 20px 10px;
+    height: 100vw;
+    transition: transform 0.3s ease; /* Smooth transition for showing/hiding */
+    position: fixed; /* Fixed position */
+
+  }
+  
+  .sidebar .logo img {
+    margin-bottom: 30px;
+    margin-left: 6px;
+
+  }
+  
+  .sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    font-weight: 600;
+    font-size: 14px;
+
+  }
+
+.sidebar .close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+    align-self: flex-end; /* Align close button to the right */
+}
+
+
+  .side img{
+    margin-left: 10px;
+  }
+  .sidebar nav li {
+    padding: 10px 0;
+    cursor: pointer;
+    color: #3B3C51;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-right: -10px;
+  }
+  
+  .sidebar nav li.active {
+    color: #007bff;
+    gap: 0;
+    background-color: #EFF6FF;
+    border-radius: 8px;
+  }
+  
+  .side{
+    gap: 5px;
+  }
+
+.settings-container{
+  border: 1px solid #F2F2F2;
+  padding: 20px 0 20px 0;
+  margin-left: -20px;
+  margin-top: 15px;
+  width: 259px;
+}
+ 
+.sidebar nav li.settings.active{
+margin-right: 10px;
+margin-left: 20px;
+}
+  
+.sidebar nav li.settings{
+  margin-right:10px ;
+}
+
+ .settings img {
+    margin-left: 27px;
+    
+  }
+  /* Main Content */
+  .main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 250px; /* Leave space for the sidebar */
+
+    overflow: hidden; /* Prevent main content from scrolling */
+    transition: margin-left 0.3s ease; /* Smooth transition for margin */
+  }
+  .menu{
+    width: 20px;
+    height: 20px;
+  }
+  .active img {
+    margin-right: 10px;
+
+  }
+
+  .greeting {
+    font-size: 16px;
+    margin-top: -6px;
+width: 300px;
+  }
+  .greeting p{
+    display: flex;
+    gap: 4px;
+    font-weight: 600;
+width: 300px;
+  }
+  .greeting .date {
+    font-size: 12px;
+    color: #878BA9;
+    margin-left: 20px;
+    margin-top: -15px;
+  }
+  
+  
+  input {
+    margin-right: 40px;
+    padding: 8px 8px 8px 40px;
+    font-size: 16px;
+    border: 1px solid #ECECF2;
+    border-radius: 5px;
+    
+  }
+  input::placeholder {
+    color: #878BA9; /* Change the placeholder color to black */
+    opacity: 1; /* Optional: Set opacity to 1 for full visibility */
+}
+
+
+/* styles.css */
+.search-container {
+  position: relative;
+  width: 300px; /* Adjust width as needed */
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px; /* Position the icon */
+  top: 50%;
+  transform: translateY(-50%); /* Center the icon vertically */
+  width: 20px; /* Adjust the size of the icon */
+  height: 20px; /* Adjust the size of the icon */
+}
+  .headers{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    height: 45px;
+  }
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .create-btn {
+    margin-top: 0;
+    font-size: 14px;
+    color: white;
+    background-color: #1B48DA;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 110px;
+  }
+  
+  .create-btn:hover {
+    background-color: #0056b3;
+  }
+  
+
+  
+  /* .profile {
+    width: 40px;
+    height: 40px;
+   color: #923E0E;
+   background-color: #FDE48A;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  } */
+  
+  .profile-container {
+    position: relative; /* Position relative to allow absolute positioning of the logout button */
+    display: flex;
+    align-items: center; /* Center the profile icon vertically */
+  }
+  
+  .profile {
+    width: 40px;
+    height: 40px;
+    color: #923E0E;
+    background-color: #FDE48A;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+    margin-right: 10px; /* Space between profile and button */
+  }
+  
+  .logout-btn {
+    position: absolute; /* Position the logout button absolutely */
+    top: 40px; /* Adjust this value to position the button below the profile */
+    left: -65px; /* Align the button with the left edge of the profile */
+    background-color: #d7d7d7; /* Red color for logout */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    z-index: 10; /* Ensure the button appears above other content */
+  }
+  
+  .logout-btn:hover {
+    background-color: #000000; /* Darker red on hover */
+  }
+  /* Dashboard Content */
+  .dashboard-content {
+    flex: 1; /* Take remaining height */
+    overflow: auto; /* Enable scrolling for internal content */
+    padding: 20px;
+    border-left: 1px solid #f2f2f2;
+    border-top: 1px solid #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+  
+
+
+  .dashboard-content h2 {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: 19px;
+    color: #181820;
+    gap: 30px;
+  }
+  
+  .total-clicks-label {
+    color: black;
+  }
+  
+  .total-clicks-value {
+    color: #1B48DA;
+  }
+  
+  .stats {
+    display: flex;
+    gap: 20px;
+    margin: 25px;
+    height: 60%;
+  flex-wrap: wrap; 
+  }
+  
+  .card {
+    flex: 1;
+    background-color: #fff;
+    border: 1px solid #ECECF2;
+    border-radius: 8px;
+    padding: 20px 35px 20px 35px;;
+  }
+  
+  .card h3 {
+    margin-top: -5px;
+    font-size: 14px;
+    color: #1B48DA;
+  }
+  
+  .card p {
+    margin-top: 10px;
+    text-align: center;
+        font-size: 13px;
+    font-weight: 800;
+  }
+  .click-stats {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .click-stats li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    color: #181820;
+    font-size: 16px;
+    font-weight: 600;
+    gap: 30px;
+  }
+
+  .blue-text {
+    color: blue; /* Set the text color to blue */
+    width: 50px; /* Fixed width for alignment */
+}
+  
+ 
+  .bar {
+    flex: 1;
+    height: 12px;
+    overflow: hidden;
+  }
+  
+  .bar .fill {
+    height: 100%;
+    background-color: #1B48DA;
+  }
+  .bar1 {
+    flex: 1;
+    height: 12px;
+    overflow: hidden;
+  }
+  
+  .bar1 .fill {
+    height: 100%;
+    background-color: #1B48DA;
+    margin-left: 12px;
+  }
+
+  .bar2 {
+    flex: 1;
+    height: 12px;
+    overflow: hidden;
+  }
+  
+  .bar2 .fill {
+    height: 100%;
+    background-color: #1B48DA;
+    margin-left: 14px;
+  }
+
+
+
+  /* Popup Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Popup Container */
+.popup {
+  background: #fff;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures content and actions are spaced apart */
+  height: 100%; /* Ensures content fills the popup */
+  max-height: 500px; /* Prevents the popup from being too tall */
+  overflow: hidden;
+ 
+}
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  flex: 1;
+}
+
+.popup-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow-y: auto;
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-top: 1px solid #ddd;
+  position: sticky;
+  bottom: 0;
+  background: white;
+}
+.popup-content h2{
+  color: #ffffff;
+  margin-left: 20px;
+  font-size: 14px;
+  font-weight: 400;
+}
+.popup-content .upper {
+  align-items: center;
+  display: flex;
+  background-color: #3B3C51;
+    margin: -20px -20px 0px -21px;
+    height: 45px;
+    justify-content: space-between;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.close-icon{
+  margin-right: 10px;
+  height: 22px
+
+}
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Form Fields */
+form label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  margin-top: 12px;
+  color: #000000;
+  margin-left: -3px;
+  margin-right: -14px;
+}
+
+.popup-content form input[type="text"],
+form input[type="datetime-local"],
+form textarea {
+  width: 94%;
+  padding: 6px;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+form textarea {
+  resize: none;
+  height: 60px;
+}
+
+.req{
+  margin-top: 20px;
+}
+.required {
+  color: red;
+  margin-left: 5px;
+}
+
+.toggle-and-label{
+  display: flex;
+      align-items: center;
+      justify-content: space-between;
+}
+
+/* Popup Actions */
+.popup-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 170px;
+  background-color: #3b3c5136;
+  margin-left: -40px;
+  margin-right: -22px;
+  height: 36px;
+
+}
+
+.popup-actions button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  align-items: center;
+  display: flex
+;
+}
+
+.popup-actions button[type="button"] {
+  background: transparent;
+  color: #333;
+  margin-left: 6px;
+  margin-bottom: 2px;;
+}
+
+.popup-actions button[type="submit"] {
+  background: #1B48DA;
+  color: #fff;
+}
+
+/* .........link.......... */
+
+/* Table Wrapper */
+.table-wrapper {
+  margin-top: 20px;
+  overflow-x: auto; /* Enable horizontal scrolling for overflow */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+/* Table Styles */
+table.links-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  table-layout: fixed; /* Ensure columns have consistent widths */
+}
+
+/* Table Header */
+table.links-table th {
+ 
+  border-bottom: 2px solid #eaeaea;
+  white-space: nowrap;
+}
+
+/* Table Rows */
+table.links-table td {
+  padding: 7px 16px;
+  border-bottom: 1px solid #eaeaea;
+  vertical-align: middle;
+
+}
+
+table.links-table td:nth-child(2) {
+  padding-right: 0; /* Remove right padding for the Original Link column */
+  max-width: 200px; /* Set a maximum width for truncating long links */
+}
+
+table.links-table tr:last-child td {
+  border-bottom: none;
+}
+
+.sort{
+  margin-left: 35px;
+}
+.sort-status{
+  margin-left: 30px
+}
+/* Copy Button */
+.copy-btn {
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin: 0;
+}
+
+.copy-btn:hover {
+  background-color: #d4d4d4;
+}
+
+/* Popup.css */
+
+.copy-popup {
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+      align-items: center;
+      justify-content: space-around;
+      gap: 18px;
+  border: 1px solid #1B48DA;
+  position: fixed;
+  bottom: 20px; /* Distance from the bottom */
+  left: 20px; /* Distance from the left */
+  background-color: #ffffff; /* Blue background */
+  color: rgb(0, 0, 0); /* White text */
+  padding: 10px 40px; /* Padding around the text */
+  border-radius: 8px; /* Rounded corners */
+  z-index: 9999; /* Ensure it appears above other elements */
+  transition: opacity 0.5s ease; /* Smooth transition for fading out */
+}
+/* Status Styles */
+.status-active {
+  color: #27ae60;
+  font-weight: 600;
+}
+
+.status-inactive {
+  color: #e67e22;
+  font-weight: 600;
+}
+
+/* Action Buttons */
+.edit-btn,
+.delete-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 5px;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 50px;
+  transition: background-color 0.2s ease;
+}
+
+
+.delete-btn:hover {
+  background-color: #d4d4d4;
+}
+.edit-btn:hover{
+  background-color: #d4d4d4;
+}
+
+
+
+
+/* Links Content Background */
+.links-content {
+  background-color: #F2F2F2;
+  height: 100vh;
+  padding: 20px;
+  overflow: hidden; /* Prevent scrolling of the entire content */
+
+}
+
+.scrollable-links {
+  max-height: calc(100vh - 140px); /* Adjust based on your layout */
+  overflow-y: auto; /* Enable vertical scrolling */
+  border-radius: 12px;
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 6px 9px rgb(0 0 0 / 23%); /* Shadow effect */
+}
+
+/* Hide scrollbar for WebKit browsers */
+.scrollable-links::-webkit-scrollbar {
+  width: 0; /* Hide scrollbar */
+  background: transparent; /* Optional: make background transparent */
+}
+
+.links-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/* Ensure Table Fits the Screen */
+.links-table {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.links-table thead th {
+  background-color: #F3F7FD;
+  color: #3B3C51;
+  padding: 10px 0px 10px 30px;
+  text-align: left;
+  height: 40px;
+  font-size: 16px;
+}
+
+.links-table tbody td {
+  background-color: #fff;
+  border-right: 1px solid #F8F8F8;
+}
+
+.links-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Truncate Original Link */
+.links-table td:nth-child(2) {
+  max-width: 200px; /* Adjust as needed */
+  text-overflow: ellipsis; /* Add ellipsis for truncated text */
+  overflow: hidden; /* Hide overflowing content */
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+/* Scrollable Table */
+.table-wrapper {
+  display: block; /* Ensure wrapper is a block element */
+  overflow-x: auto; /* Add horizontal scrolling for overflow */
+}
+
+
+
+/* Table Styles */
+table.links-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  table-layout: fixed; /* Ensure columns have consistent widths */
+}
+
+/* Table Header */
+
+
+
+
+/* Short Link Cell */
+.short-link-cell {
+
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+
+.links-table td:nth-child(1) {
+ padding: 0px 6px 0px 14px; 
+}
+/* Set fixed widths for each column */
+.links-table th:nth-child(1),
+.links-table td:nth-child(1) {
+  width: 120px; /* Adjust width as needed */
+}
+
+.links-table th:nth-child(2),
+.links-table td:nth-child(2) {
+  width: 125px; /* Width for Original Link */
+}
+
+.links-table th:nth-child(3) {
+  width: 140px; /* Width for Short Link */
+}
+
+.links-table th:nth-child(4),
+.links-table td:nth-child(4) {
+  width: 150px; /* Width for Remarks */
+}
+
+.links-table th:nth-child(5),
+.links-table td:nth-child(5) {
+  width: 80px; /* Width for Clicks */
+}
+
+.links-table th:nth-child(6),
+.links-table td:nth-child(6) {
+  width: 110px; /* Width for Status */
+}
+
+.links-table th:nth-child(7),
+.links-table td:nth-child(7) {
+  width: 100px; /* Width for Action */
+}
+
+/* Optional: Ensure all cells have the same height */
+.links-table tr {
+  height: 50px; /* Set a fixed height for rows */
+}
+.links-table td:nth-child(6) {
+  text-align: center; /* Center align the cell */
+}
+
+.links-table td:nth-child(3) {
+  text-align: center; /* Center align the cell */
+}
+.links-table td:nth-child(5) {
+  padding-left: 25px;
+}
+
+.nodata{
+  text-align: center;
+  height: 55px;
+}
+.pagination{
+  display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+      gap: 15px;
+}
+
+.pagination span{
+  font-size: 14px;
+  font-weight: 600;
+}
+.pagination button {
+  background-color: #1b48da;
+  border: none;; /* Default button color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 4px 8px 4px 8px; /* Padding */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.pagination button.disabled {
+  background-color: grey; /* Grey color for disabled state */
+  cursor: not-allowed; /* Change cursor to indicate disabled */
+  
+}
+
+.pagination button:hover:not(.disabled) {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+
+
+/* analytics */
+.analytics-content {
+  background-color: #F2F2F2;
+  height: 100vh;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.analytics-content h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #3B3C51;
+}
+
+.analytics-content table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.analytics-content th, .analytics-content td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #F8F8F8;
+  height: 35px;
+  background-color: #fff;
+  border-right: 1px solid #F8F8F8;
+  font-size: 14px;
+    font-weight: 500;
+}
+
+.analytics-content th {
+  background-color: #F3F7FD;
+  color: #3B3C51;
+  padding: 11px 0px 11px 30px;
+  text-align: left;
+  height: 40px;
+  font-size: 16px;
+  border-bottom: 2px solid #dfdfdf;
+  font-weight: 700;
+}
+
+
+.analytics-content td
+{
+  padding: 10px 0px 10px 16px;
+  overflow: hidden;
+  max-width: 200px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+th:nth-child(1) {
+  width: 15%; /* Width for Date */
+}
+
+th:nth-child(2) {
+  max-width: 200px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap; /* Width for Original Link */
+}
+
+th:nth-child(3) {
+  width: 30%; /* Width for Short Link */
+}
+
+th:nth-child(4) {
+  width: 15%; /* Width for IP Address */
+}
+
+th:nth-child(5) {
+  width: 12%; /* Width for Device */
+}
+.analytics-content .blue-text {
+  color: #007bff; /* Blue color for click counts */
+  font-weight: bold;
+}
+
+.analytics-content .button-groups {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.analytics-content .button-groups button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.analytics-content .button-groups .yes {
+  background-color: #d9534f; /* Red for delete confirmation */
+  color: white;
+}
+
+.analytics-content .button-groups .no {
+  background-color: #5bc0de; /* Blue for cancel */
+  color: white;
+}
+
+.analytics-content .button-groups .yes:hover {
+  background-color: #c9302c; /* Darker red on hover */
+}
+
+.analytics-content .button-groups .no:hover {
+  background-color: #31b0d5; /* Darker blue on hover */
+}
+
+
+/* ProfileSettings.css */
+
+.sett {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  border-left: 1px solid #f2f2f2;
+  border-top: 1px solid #f2f2f2;
+}
+
+.settings-content {
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 100%;
+  margin-top: 40px;
+  margin-right: 250px;
+}
+
+.form-container2{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group{
+  display: flex;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  text-align: left;
+  width: 60%;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  margin: 0;
+  color: #3B3C51
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 35px;
+}
+
+
+.save-btn {
+  background-color: #1B48DA;
+  color: white;
+  border: none;
+  padding: 13px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.delete-btns {
+  background-color: #EB0D0D;
+  color: white;
+  border: none;
+  padding: 13px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.delete-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.popup-contents{
+  background-color: white;
+  padding: 40px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  width: 350px;
+}
+.popup-contents h3{
+  font-size: 14px;
+}
+.button-groups{
+  display: flex;
+      justify-content: space-around;
+          margin-top: 30px;
+}
+.no{
+  padding: 10px 50px 10px 50px;
+  background-color: #ECECEE;
+  color: #000000;
+  font-size: 15px;
+
+}
+.yes{
+  padding: 10px 50px 10px 50px;
+  background-color: #1B48DA;
+  font-size: 15px;
+
+}
+
+.close-popup-btn{
+  background-color: transparent;
+
+}
+
+.close-popup-btn {
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+
+
+.close-popup-btn img:hover {
+  opacity: 0.8;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #4A70D1;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.link-expiration-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.hamburger-menu {
+  display: none; /* Hidden by default */
+  cursor: pointer; /* Pointer cursor */
+}
+
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%); 
+    background: #fff;
+  }
+
+  .main-content {
+        width: 100%; /* Full width for main content */
+        margin: 0;
+  }
+.headers{
+margin-left: 30px;
+}
+.greeting{
+  width: 200px;
+}
+.greeting p{
+  font-size: 10px;
+}
+.greeting .date{
+  font-size: 8px;
+}
+.create-btn{
+  font-size: 9px;
+}
+.search-container{
+  width: 180px;
+  margin-right: 80px;
+}
+.search-container input{
+font-size: 10px;
+width: 125px;
+}
+.profile{
+  height: 34px;
+  width: 34px;
+  margin-left: 0;
+}
+.sidebar .logo img{
+  width: 95px;
+  margin-left: 5px;
+  margin-top: 33px;
+  margin-bottom: 5px;
+}
+.dashboard-content{
+  width: 100%;
+}
+  .hamburger-menu {
+    display: block; /* Show hamburger menu */
+    position: absolute; /* Position it at the top */
+    top: 10px; /* Distance from the top */
+    left: 10px; /* Distance from the left */
+    z-index: 1000; /* Ensure it is above other elements */
+  }
+
+  .sidebar.active {
+    transform: translateX(0); /* Show sidebar when active */
+  }
+  .settings-content {
+margin-right: 0;
+}
+.stats {
+  display: block;
+}
+.card{
+  margin-top: 15px;
+}
+}
+
+@media (max-width: 1024px) {
+  
+  .profile-container{
+    margin-left: -61px;
+  }
+  .actions{
+    margin-left: -55px;
+
+}
+}
+
+@media (max-width: 600px) {
+  .search-container input{
+    font-size: 10px;
+    width: 90px;
+    }
+    .search-container {
+      width: 150px;
+  }
+  .greeting {
+    width: 150px;
+}
+}
+
+
+@media (max-width: 425px) {
+  .profile{
+    margin-left: 32px;
+  }
+ 
+  .search-container {
+    margin-right: 0px;
+}
+
+  .create-btn{
+    padding: 7px 7px 7px 7px;
+    width: 73px
+  }
+  .greeting {
+    margin-left: -13px;
+}
+.actions{
+  margin-left: -24px;
+}
+.search-container input{
+  padding: 6px 5px 6px 35px;
+}
+}
+
+@media (max-width: 375px) {
+ .profile{
+  margin-left: 0px;
+ }
+ .create-btn{
+  padding: 6px;
+ }
+ .actions{
+  gap: 5px;
+ }
+ .search-container input{
+  width: 46px;
+ }
+}
+
+
+@media (max-width: 320px) {
+  .search-container input{
+    margin-top: 4px;
+    width: 87px;
+  }
+  .profile-container{
+    margin-top: -19px;
+    margin-left: -87px;
+    margin-right: -18px;
+  
+  }
+  .search-container{
+    margin-left: -125px;
+    margin-top: -6px;
+   }
+  
+        .headers {
+        margin-left: 27px;
+    }
+    .profile {
+      height: 28px;
+      width: 28px;
+      margin-left: 9px;
+      margin-top: 51px;
+  }
+  .actions{
+    display: contents;
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 6px;
+    top: 35%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+}
+.create-btn{
+  margin-left: -24px;
+  height: 23px;
+  margin-top: 27px;
+}
+
+}
+ 
