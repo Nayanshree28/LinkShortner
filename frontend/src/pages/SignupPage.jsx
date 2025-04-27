@@ -46,7 +46,7 @@ const SignupPage = () => {
     };
 
     try {
-      const response = await fetch('https://mini-link-management-platform-lwxs.onrender.com/api/auth/signup', {
+      const response = await fetch('https://linkshortner-yogg.onrender.com/api/auth/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

@@ -105,7 +105,7 @@ useEffect(() => {
         return;
       }
 
-      const response = await axios.get('https://mini-link-management-platform-lwxs.onrender.com/api/auth/details', {
+      const response = await axios.get('https://linkshortner-yogg.onrender.com/api/auth/details', {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -143,7 +143,7 @@ const handleSaveChanges = async (e) => {
   try {
     const token = localStorage.getItem('token');
     const response = await axios.put(
-      'https://mini-link-management-platform-lwxs.onrender.com/api/auth/update', 
+      'https://linkshortner-yogg.onrender.com/api/auth/update', 
       {
         name: userName.trim() || 'defaultName', 
         email: userEmail.trim() || 'default@example.com', 
@@ -237,7 +237,7 @@ const handleExpirationChange = (e) => {
  const handleDeleteAccount = async () => {
   const token = localStorage.getItem('token');
   try {
-    const response = await axios.delete('https://mini-link-management-platform-lwxs.onrender.com/api/auth/delete', {
+    const response = await axios.delete('https://linkshortner-yogg.onrender.com/api/auth/delete', {
       headers: { Authorization: `Bearer ${token}` },
     });
 
@@ -264,7 +264,7 @@ useEffect(() => {
         return;
       }
 
-      const response = await axios.get(`https://mini-link-management-platform-lwxs.onrender.com/api/auth/all?page=${currentPage}`, {
+      const response = await axios.get(`https://linkshortner-yogg.onrender.com/api/auth/all?page=${currentPage}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -298,7 +298,7 @@ useEffect(() => {
         return;
       }
 
-      const response = await axios.get(`https://mini-link-management-platform-lwxs.onrender.com/api/auth/clicks?page=${currentPage}`, {
+      const response = await axios.get(`https://linkshortner-yogg.onrender.com/api/auth/clicks?page=${currentPage}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -382,7 +382,7 @@ const handleFormSubmit = async (e) => {
 
   try {
     const token = localStorage.getItem('token'); // Get the token from local storage
-    const response = await fetch("https://mini-link-management-platform-lwxs.onrender.com/api/auth/create", {
+    const response = await fetch("https://linkshortner-yogg.onrender.com/api/auth/create", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -464,7 +464,7 @@ const initialLinks = [
 const handleDelete = async () => {
   const token = localStorage.getItem('token');
   try {
-    await axios.delete(`https://mini-link-management-platform-lwxs.onrender.com/api/auth/url/${linkToDelete._id}`, {
+    await axios.delete(`https://linkshortner-yogg.onrender.com/api/auth/url/${linkToDelete._id}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     setLinks(links.filter(link => link._id !== linkToDelete._id)); // Remove the deleted link from the state
@@ -521,7 +521,7 @@ const handleMouseLeave = (id, type) => {
 useEffect(() => {
   const fetchLinks = async () => {
     const token = localStorage.getItem('token');
-    const response = await axios.get('https://mini-link-management-platform-lwxs.onrender.com/api/auth/all', {
+    const response = await axios.get('https://linkshortner-yogg.onrender.com/api/auth/all', {
       headers: { Authorization: `Bearer ${token}` },
     });
 
@@ -585,7 +585,7 @@ const handleEditSubmit = async (e) => {
 
   try {
     const token = localStorage.getItem('token'); // Get the token from local storage
-    const response = await fetch(`https://mini-link-management-platform-lwxs.onrender.com/api/auth/url/${editLinkId}`, {
+    const response = await fetch(`https://linkshortner-yogg.onrender.com/api/auth/url/${editLinkId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
